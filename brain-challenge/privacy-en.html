@@ -29,7 +29,7 @@
 <main>
   <p class="muted"><a href="privacy.html" hreflang="ko" lang="ko">한국어</a></p>
   <h1>Brain Challenge Privacy Policy</h1>
-  <p class="muted">Effective date: November 4, 2026</p>
+  <p class="muted">Effective date: November 5, 2026</p>
 
   <div class="box">
     <p><b>Summary</b></p>
@@ -37,7 +37,8 @@
       <li>We <b>do not collect</b> personal information such as your name, phone number, email address, or location.</li>
       <li><b>Only when you participate in the leaderboard</b>, we send a randomly generated account ID, your chosen nickname, and your best game scores to the server. If you do not participate, none of this information is sent.</li>
       <li>For advertising (Google AdMob), Google processes your advertising ID and other information.</li>
-      <li>Game records and settings are stored <b>only on your device</b> and cannot be viewed by the operator.</li>
+      <li>To fix and improve the app, we collect <b>usage statistics and crash reports</b> (Google Firebase). They do not include your nickname or leaderboard account ID.</li>
+      <li>Game records and settings are stored <b>on your device</b>; the operator cannot see individual records.</li>
       <li>You can immediately delete your server data at any time through <b>Settings &gt; Leaderboard &gt; Delete leaderboard data</b> in the app.</li>
     </ul>
   </div>
@@ -50,9 +51,11 @@
     <tr><td>When participating in the leaderboard (optional)</td><td>Randomly generated anonymous account ID, nickname, best scores by game and difficulty and the time they were achieved, app version, synchronization usage records (date and whether free or ad-supported), and last access date</td></tr>
     <tr><td>When synchronizing after watching an ad</td><td>Ad viewing verification records (ad transaction ID and account ID)</td></tr>
     <tr><td>When ads are displayed in the app</td><td>Google AdMob processes the advertising ID, device and app information, IP address, ad usage records, and similar information (see section 5)</td></tr>
+    <tr><td>When using the app (usage statistics)</td><td>Google Firebase Analytics processes a random per-installation ID, device and app information (model, OS version, language, app version), approximate region estimated from the IP address, and usage records (screens viewed; game start and finish with the game, difficulty, score, number of mistakes and whether it was a new best; leaderboard sync and ad viewing results; usage time)</td></tr>
+    <tr><td>When the app crashes</td><td>Google Firebase Crashlytics processes the error details (crash report), the device state at that time (model, OS version, memory, etc.), a random per-installation ID, and the last screen viewed</td></tr>
     <tr><td>When connecting to the server</td><td>The IP address and connection time may be included in server operational logs</td></tr>
   </table></div>
-  <p class="muted">Game result records, best scores, play counts, and sound, vibration, and theme settings are stored only on your device and are not sent to the server.</p>
+  <p class="muted">Game result records, best scores, play counts, and sound, vibration, and theme settings are stored on your device and are not sent to the leaderboard server (except your best scores when you participate in the leaderboard). Usage statistics include the result of each game (game, difficulty, score) but are not linked to your nickname or leaderboard account.</p>
 
   <h2>2. Purposes of processing</h2>
   <ul>
@@ -60,6 +63,7 @@
     <li>Managing daily synchronization limits (free and ad-supported)</li>
     <li>Preventing misuse, including impossible scores</li>
     <li>Verifying ad views and providing ads</li>
+    <li>Analyzing app usage (popular games, difficulty tuning, etc.) and fixing errors</li>
   </ul>
 
   <h2>3. Retention and deletion</h2>
@@ -68,6 +72,8 @@
     <tr><td>Nickname, leaderboard records, and account ID</td><td>Until deleted by the user. However, <b>accounts inactive for 90 days</b> are automatically deleted (accounts without a nickname are deleted 30 days after creation).</td></tr>
     <tr><td>Synchronization usage and ad viewing verification records</td><td>Automatically deleted after 7 days</td></tr>
     <tr><td>Server operational logs (such as IP addresses)</td><td>Automatically deleted according to the server provider’s (Supabase’s) retention period</td></tr>
+    <tr><td>Usage statistics (Firebase Analytics)</td><td>Usage records (events) are automatically deleted after 2 months, and user-level data linked to the per-installation ID after 14 months (Google Analytics data retention settings). Aggregated statistics may remain</td></tr>
+    <tr><td>Crash reports (Firebase Crashlytics)</td><td>Automatically deleted after 90 days</td></tr>
   </table></div>
   <p>When the retention period ends or a user requests deletion, the data is promptly deleted from the server database and cannot be recovered.</p>
 
@@ -79,9 +85,9 @@
   <div class="table"><table>
     <tr><th>Recipient</th><th>Country</th><th>Information</th><th>Purpose</th><th>When and how</th><th>Retention</th></tr>
     <tr><td>Supabase, Inc.</td><td>Singapore (server location)</td><td>Leaderboard information listed in section 1, ad viewing verification records, and IP addresses</td><td>Operating the leaderboard server and database</td><td>Transferred over an encrypted network (HTTPS) when participating in the leaderboard, synchronizing, or viewing rankings</td><td>As described in section 3</td></tr>
-    <tr><td>Google LLC (AdMob)</td><td>United States and other countries</td><td>Advertising ID, device and app information, IP address, ad usage records, and anonymous account ID for ad viewing verification</td><td>Providing ads and verifying ad views</td><td>Transferred over an encrypted network when ads are loaded or viewed</td><td>According to the <a href="https://policies.google.com/privacy?hl=en">Google Privacy Policy</a></td></tr>
+    <tr><td>Google LLC (AdMob, Firebase)</td><td>United States and other countries</td><td>Advertising ID, random per-installation ID, device and app information, IP address, ad usage records, anonymous account ID for ad viewing verification, and the usage statistics and crash reports in section 1</td><td>Providing ads, verifying ad views, analyzing usage, and fixing errors</td><td>Transferred over an encrypted network while you use the app, when ads are loaded or viewed, and when the app crashes</td><td>According to the <a href="https://policies.google.com/privacy?hl=en">Google Privacy Policy</a></td></tr>
   </table></div>
-  <p class="muted">If you do not want leaderboard information transferred abroad, do not participate in the leaderboard. Advertising-related processing can be reduced using the methods in section 7.</p>
+  <p class="muted">If you do not want leaderboard information transferred abroad, do not participate in the leaderboard. Advertising-related processing can be reduced using the methods in section 7. Usage statistics and crash reports are sent while you use the app; if you do not want this, please uninstall the app.</p>
 
   <h2>6. Your rights and how to exercise them</h2>
   <ul>
@@ -96,6 +102,7 @@
   <ul>
     <li>On Android, you can delete or reset your advertising ID under <b>Settings &gt; Privacy (or Google) &gt; Ads</b>.</li>
     <li>In the European Economic Area (EEA), the United Kingdom, and other applicable regions, the app asks for advertising consent when first launched.</li>
+    <li>A banner ad is shown at the bottom of the home screen. No ads appear while you play a game or on the results screen.</li>
     <li>Rewarded ads are shown only when you choose to watch one to increase your synchronization allowance.</li>
   </ul>
 
